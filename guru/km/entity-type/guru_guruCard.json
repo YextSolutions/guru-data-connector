@@ -1,0 +1,70 @@
+{
+  "$id": "guru_guruCard",
+  "$schema": "https://schema.yext.com/config/km/entity-type/v1",
+  "description": "",
+  "displayName": "Guru Card",
+  "enabled": true,
+  "field": [
+    {
+      "id": "yext/body",
+      "required": false
+    },
+    {
+      "id": "yext/externalArticlePostDate",
+      "required": false
+    },
+    {
+      "id": "yext/externalArticleUpdateDate",
+      "required": false
+    },
+    {
+      "id": "yext/landingPageUrl",
+      "required": false
+    },
+    {
+      "id": "yext/name",
+      "required": true
+    },
+    {
+      "id": "guru_attachments",
+      "required": false
+    },
+    {
+      "id": "guru_boardTitles",
+      "required": false
+    },
+    {
+      "id": "guru_collectionName",
+      "required": false
+    },
+    {
+      "id": "guru_lastVerifiedDate",
+      "required": false
+    },
+    {
+      "id": "guru_ownerEmail",
+      "required": false
+    },
+    {
+      "id": "guru_verificationState",
+      "required": false
+    },
+    {
+      "id": "yext/folder",
+      "required": false
+    },
+    {
+      "id": "yext/keywords",
+      "required": false
+    },
+    {
+      "id": "yext/labels",
+      "required": false
+    },
+    {
+      "id": "yext/entityId",
+      "required": true
+    }
+  ],
+  "pluralDisplayName": ""
+}

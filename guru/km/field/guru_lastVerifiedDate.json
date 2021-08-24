@@ -1,0 +1,12 @@
+{
+  "$id": "guru_lastVerifiedDate",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "description": "Guru last verified date",
+  "displayName": "Last Verified Date",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "dateType": {}
+  },
+  "typeId": "yext/date"
+}

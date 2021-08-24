@@ -1,0 +1,198 @@
+{
+  "$id": "guru_cardConnector",
+  "$schema": "https://schema.yext.com/config/km/connector/v1",
+  "displayName": "Guru Card Connector",
+  "entityType": "guru_GuruCard",
+  "source": {
+    "sourceConfig": {
+      "apiPullConfig": {
+        "requestType": "GET",
+        "url": "https://api.getguru.com/api/v1/search/query",
+        "authentication": {
+          "basicAuthentication": {
+            "username": "${{Username}}",
+            "password": "${{Password}}"
+          }
+        },
+        "paginationControl": {
+          "linkHeaderPagination": {
+            "relationLabel": "next-page",
+            "linkType": "FULL_URL"
+          }
+        },
+        "headers": {},
+        "queryParams": {},
+        "dataFormat": "JSON"
+      }
+    },
+    "baseSelector": {
+      "type": "JSON",
+      "header": "Entity Container",
+      "path": "[]"
+    },
+    "selectors": [
+      {
+        "type": "JSON",
+        "header": "Name",
+        "path": "preferredPhrase"
+      },
+      {
+        "type": "JSON",
+        "header": "ID",
+        "path": "id"
+      },
+      {
+        "type": "JSON",
+        "header": "URL",
+        "path": "slug"
+      },
+      {
+        "type": "JSON",
+        "header": "Body",
+        "path": "content"
+      },
+      {
+        "type": "JSON",
+        "header": "Date Created",
+        "path": "dateCreated"
+      },
+      {
+        "type": "JSON",
+        "header": "Last Verified Date",
+        "path": "lastVerified"
+      },
+      {
+        "type": "JSON",
+        "header": "Last Update Time",
+        "path": "lastModified"
+      },
+      {
+        "type": "JSON",
+        "header": "Verification State",
+        "path": "verificationState"
+      },
+      {
+        "type": "JSON",
+        "header": "Collection Name",
+        "path": "collection.name"
+      },
+      {
+        "type": "JSON",
+        "header": "Board Titles",
+        "path": "boards[*].title"
+      },
+      {
+        "type": "JSON",
+        "header": "Owner Email",
+        "path": "owner.email"
+      },
+      {
+        "type": "JSON",
+        "header": "Keywords",
+        "path": "tags[*].value"
+      },
+      {
+        "type": "JSON",
+        "header": "Attachments",
+        "path": "attachments[*].link"
+      }
+    ]
+  },
+  "transforms": [
+    {
+      "function": {
+        "inputHeaders": {
+          "headers": [
+            "Date Created",
+            "Last Verified Date",
+            "Last Update Time"
+          ]
+        },
+        "plugin": "guru_formatDates",
+        "function": "formatDates"
+      }
+    },
+    {
+      "function": {
+        "inputHeaders": {
+          "headers": [
+            "URL"
+          ]
+        },
+        "plugin": "guru_createUrls",
+        "function": "createUrl"
+      }
+    }
+  ],
+  "mappings": [
+    {
+      "field": "guru_boardTitles",
+      "header": "Board Titles",
+      "subfieldPath": []
+    },
+    {
+      "field": "yext/externalArticleUpdateDate",
+      "header": "Last Update Time",
+      "subfieldPath": []
+    },
+    {
+      "field": "yext/keywords",
+      "header": "Keywords",
+      "subfieldPath": []
+    },
+    {
+      "field": "guru_attachments",
+      "header": "Attachments",
+      "subfieldPath": []
+    },
+    {
+      "field": "yext/landingPageUrl",
+      "header": "URL",
+      "subfieldPath": []
+    },
+    {
+      "field": "yext/name",
+      "header": "Name",
+      "subfieldPath": []
+    },
+    {
+      "field": "guru_verificationState",
+      "header": "Verification State",
+      "subfieldPath": []
+    },
+    {
+      "field": "guru_collectionName",
+      "header": "Collection Name",
+      "subfieldPath": []
+    },
+    {
+      "field": "guru_ownerEmail",
+      "header": "Owner Email",
+      "subfieldPath": []
+    },
+    {
+      "field": "guru_lastVerifiedDate",
+      "header": "Last Verified Date",
+      "subfieldPath": []
+    },
+    {
+      "field": "yext/entityId",
+      "header": "ID",
+      "subfieldPath": []
+    },
+    {
+      "field": "yext/body",
+      "header": "Body",
+      "subfieldPath": []
+    },
+    {
+      "field": "yext/externalArticlePostDate",
+      "header": "Date Created",
+      "subfieldPath": []
+    }
+  ],
+  "scheduleConfig": {
+    "useSourceSchedule": false,
+    "runMode": "DEFAULT"
+  }
+}

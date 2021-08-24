@@ -1,0 +1,82 @@
+{
+  "$id": "guru_guruCard",
+  "$schema": "https://schema.yext.com/config/km/field-presentation/v1",
+  "entityType": "guru_guruCard",
+  "displayName": "Guru Card",
+  "presentationEntries": [
+    {
+      "displayName": "Content",
+      "entryType": "DIVIDER"
+    },
+    {
+      "displayName": "Core Information",
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "yext/name",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "yext/entityId",
+          "visibleOnAdd": true
+        }
+      ]
+    },
+    {
+      "displayName": "Card Details",
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "yext/body",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "yext/landingPageUrl"
+        },
+        {
+          "id": "guru_boardTitles"
+        },
+        {
+          "id": "guru_collectionName"
+        },
+        {
+          "id": "yext/keywords"
+        },
+        {
+          "id": "yext/externalArticlePostDate"
+        },
+        {
+          "id": "yext/externalArticleUpdateDate"
+        },
+        {
+          "id": "guru_lastVerifiedDate"
+        },
+        {
+          "id": "guru_verificationState"
+        },
+        {
+          "id": "guru_ownerEmail"
+        },
+        {
+          "id": "guru_attachments"
+        }
+      ]
+    },
+    {
+      "displayName": "Other",
+      "entryType": "DIVIDER"
+    },
+    {
+      "displayName": "Internal Use Only",
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "yext/folder"
+        },
+        {
+          "id": "yext/labels"
+        }
+      ]
+    }
+  ]
+}

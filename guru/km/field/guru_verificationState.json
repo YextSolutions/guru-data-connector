@@ -1,0 +1,14 @@
+{
+  "$id": "guru_verificationState",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "description": "Guru Verification State",
+  "displayName": "Verification State",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "stringType": {
+      "stereotype": "SIMPLE"
+    }
+  },
+  "typeId": "yext/string"
+}

@@ -1,0 +1,19 @@
+{
+  "$id": "guru_attachments",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "description": "Link to attachments from Guru Cards.",
+  "displayName": "Attachments",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "listType": {
+      "typeId": "yext/string",
+      "type": {
+        "stringType": {
+          "stereotype": "URL"
+        }
+      }
+    }
+  },
+  "typeId": "yext/list"
+}
