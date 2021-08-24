@@ -2,7 +2,7 @@
   "$id": "guru_cardConnector",
   "$schema": "https://schema.yext.com/config/km/connector/v1",
   "displayName": "Guru Card Connector",
-  "entityType": "guru_GuruCard",
+  "entityType": "guru_guruCard",
   "source": {
     "sourceConfig": {
       "apiPullConfig": {
