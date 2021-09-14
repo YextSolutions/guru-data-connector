@@ -191,8 +191,13 @@
       "subfieldPath": []
     }
   ],
-  "scheduleConfig": {
-    "useSourceSchedule": false,
-    "runMode": "DEFAULT"
+    "scheduleConfig": {
+      "customSchedule": {
+        "timeZone": "America/New_York",
+        "startDate": "2021-09-14",
+        "startTime": "03:00",
+        "frequencyType": "DAILY"
+      },
+    "runMode": "COMPREHENSIVE"
   }
 }
