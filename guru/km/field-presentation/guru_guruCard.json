@@ -13,11 +13,11 @@
       "entryType": "SECTION",
       "fields": [
         {
-          "id": "yext/name",
+          "id": "name",
           "visibleOnAdd": true
         },
         {
-          "id": "yext/entityId",
+          "id": "entityId",
           "visibleOnAdd": true
         }
       ]
@@ -27,11 +27,11 @@
       "entryType": "SECTION",
       "fields": [
         {
-          "id": "yext/body",
+          "id": "body",
           "visibleOnAdd": true
         },
         {
-          "id": "yext/landingPageUrl"
+          "id": "landingPageUrl"
         },
         {
           "id": "guru_boardTitles"
@@ -40,13 +40,13 @@
           "id": "guru_collectionName"
         },
         {
-          "id": "yext/keywords"
+          "id": "keywords"
         },
         {
-          "id": "yext/externalArticlePostDate"
+          "id": "externalArticlePostDate"
         },
         {
-          "id": "yext/externalArticleUpdateDate"
+          "id": "externalArticleUpdateDate"
         },
         {
           "id": "guru_lastVerifiedDate"
@@ -71,10 +71,10 @@
       "entryType": "SECTION",
       "fields": [
         {
-          "id": "yext/folder"
+          "id": "folder"
         },
         {
-          "id": "yext/labels"
+          "id": "labels"
         }
       ]
     }

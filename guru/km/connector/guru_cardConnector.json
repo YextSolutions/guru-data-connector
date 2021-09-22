@@ -131,12 +131,12 @@
       "subfieldPath": []
     },
     {
-      "field": "yext/externalArticleUpdateDate",
+      "field": "externalArticleUpdateDate",
       "header": "Last Update Time",
       "subfieldPath": []
     },
     {
-      "field": "yext/keywords",
+      "field": "keywords",
       "header": "Keywords",
       "subfieldPath": []
     },
@@ -146,12 +146,12 @@
       "subfieldPath": []
     },
     {
-      "field": "yext/landingPageUrl",
+      "field": "landingPageUrl",
       "header": "URL",
       "subfieldPath": []
     },
     {
-      "field": "yext/name",
+      "field": "name",
       "header": "Name",
       "subfieldPath": []
     },
@@ -176,17 +176,17 @@
       "subfieldPath": []
     },
     {
-      "field": "yext/entityId",
+      "field": "entityId",
       "header": "ID",
       "subfieldPath": []
     },
     {
-      "field": "yext/body",
+      "field": "body",
       "header": "Body",
       "subfieldPath": []
     },
     {
-      "field": "yext/externalArticlePostDate",
+      "field": "externalArticlePostDate",
       "header": "Date Created",
       "subfieldPath": []
     }
