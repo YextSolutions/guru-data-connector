@@ -5,30 +5,14 @@
   "entityType": "guru_guruCard",
   "source": {
     "sourceConfig": {
-      "apiPullConfig": {
-        "requestType": "GET",
-        "url": "https://api.getguru.com/api/v1/search/query",
-        "authentication": {
-          "basicAuthentication": {
-            "username": "${{Username}}",
-            "password": "${{Password}}"
-          }
-        },
-        "paginationControl": {
-          "linkHeaderPagination": {
-            "relationLabel": "next-page",
-            "linkType": "FULL_URL"
-          }
-        },
-        "headers": {},
-        "queryParams": {},
-        "dataFormat": "JSON"
-      }
-    },
-    "baseSelector": {
-      "type": "JSON",
-      "header": "Entity Container",
-      "path": "[]"
+      "nativeSourceConfig": {
+        "source": "guru",
+        "operation": "fetchCards",
+        "inputs": {
+          "username": "${{username}}",
+          "password": "${{password}}"
+        }
+      } 
     },
     "selectors": [
       {
