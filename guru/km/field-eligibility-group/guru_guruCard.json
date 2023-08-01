@@ -1,19 +1,19 @@
 {
-  "$id": "guru_guruCard",
-  "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
-  "name": "Guru Card-default",
-  "entityType": "guru_guruCard",
-  "fields": [
-    "body",
-    "externalArticlePostDate",
-    "externalArticleUpdateDate",
-    "landingPageUrl",
-    "guru_attachments",
-    "guru_boardTitles",
-    "guru_collectionName",
-    "guru_lastVerifiedDate",
-    "guru_ownerEmail",
-    "guru_verificationState",
-    "keywords"
-  ]
+    "$id": "guru_guruCard",
+    "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
+    "name": "Guru Card-default",
+    "entityType": "guru_guruCard",
+    "fields": [
+        "bodyV2",
+        "externalArticlePostDate",
+        "externalArticleUpdateDate",
+        "landingPageUrl",
+        "guru_attachments",
+        "guru_boardTitles",
+        "guru_collectionName",
+        "guru_lastVerifiedDate",
+        "guru_ownerEmail",
+        "guru_verificationState",
+        "keywords"
+    ]
 }

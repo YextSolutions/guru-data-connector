@@ -1,187 +1,197 @@
 {
-  "$id": "guru_cardConnector",
-  "$schema": "https://schema.yext.com/config/km/connector/v2",
-  "displayName": "Guru Card Connector",
-  "entityType": "guru_guruCard",
-  "source": {
-    "sourceConfig": {
-      "nativeSourceConfig": {
-        "source": "guru",
-        "operation": "fetchCards",
-        "inputs": {
-          "username": "${{username}}",
-          "password": "${{password}}"
+    "$id": "guru_cardConnector",
+    "$schema": "https://schema.yext.com/config/km/connector/v4",
+    "displayName": "Guru Card Connector",
+    "entityTypes": [
+        "guru_guruCard"
+    ],
+    "source": {
+        "sourceConfig": {
+            "nativeSourceConfig": {
+                "source": "guru",
+                "operation": "fetchCards",
+                "inputs": {
+                    "username": "${{username}}",
+                    "password": "${{password}}"
+                }
+            }
+        },
+        "selectors": [
+            {
+                "type": "JSON",
+                "header": "Name",
+                "path": "preferredPhrase"
+            },
+            {
+                "type": "JSON",
+                "header": "ID",
+                "path": "id"
+            },
+            {
+                "type": "JSON",
+                "header": "URL",
+                "path": "slug"
+            },
+            {
+                "type": "JSON",
+                "header": "Body",
+                "path": "content"
+            },
+            {
+                "type": "JSON",
+                "header": "Date Created",
+                "path": "dateCreated"
+            },
+            {
+                "type": "JSON",
+                "header": "Last Verified Date",
+                "path": "lastVerified"
+            },
+            {
+                "type": "JSON",
+                "header": "Last Update Time",
+                "path": "lastModified"
+            },
+            {
+                "type": "JSON",
+                "header": "Verification State",
+                "path": "verificationState"
+            },
+            {
+                "type": "JSON",
+                "header": "Collection Name",
+                "path": "collection.name"
+            },
+            {
+                "type": "JSON",
+                "header": "Board Titles",
+                "path": "boards[*].title"
+            },
+            {
+                "type": "JSON",
+                "header": "Owner Email",
+                "path": "owner.email"
+            },
+            {
+                "type": "JSON",
+                "header": "Keywords",
+                "path": "tags[*].value"
+            },
+            {
+                "type": "JSON",
+                "header": "Attachments",
+                "path": "attachments[*].link"
+            }
+        ]
+    },
+    "transforms": [
+        {
+            "function": {
+                "inputHeaders": {
+                    "headers": [
+                        "Date Created",
+                        "Last Verified Date",
+                        "Last Update Time"
+                    ]
+                },
+                "plugin": "guru_formatDates",
+                "function": "formatDates"
+            }
+        },
+        {
+            "function": {
+                "inputHeaders": {
+                    "headers": [
+                        "URL"
+                    ]
+                },
+                "plugin": "guru_createUrls",
+                "function": "createUrl"
+            }
         }
-      } 
-    },
-    "selectors": [
-      {
-        "type": "JSON",
-        "header": "Name",
-        "path": "preferredPhrase"
-      },
-      {
-        "type": "JSON",
-        "header": "ID",
-        "path": "id"
-      },
-      {
-        "type": "JSON",
-        "header": "URL",
-        "path": "slug"
-      },
-      {
-        "type": "JSON",
-        "header": "Body",
-        "path": "content"
-      },
-      {
-        "type": "JSON",
-        "header": "Date Created",
-        "path": "dateCreated"
-      },
-      {
-        "type": "JSON",
-        "header": "Last Verified Date",
-        "path": "lastVerified"
-      },
-      {
-        "type": "JSON",
-        "header": "Last Update Time",
-        "path": "lastModified"
-      },
-      {
-        "type": "JSON",
-        "header": "Verification State",
-        "path": "verificationState"
-      },
-      {
-        "type": "JSON",
-        "header": "Collection Name",
-        "path": "collection.name"
-      },
-      {
-        "type": "JSON",
-        "header": "Board Titles",
-        "path": "boards[*].title"
-      },
-      {
-        "type": "JSON",
-        "header": "Owner Email",
-        "path": "owner.email"
-      },
-      {
-        "type": "JSON",
-        "header": "Keywords",
-        "path": "tags[*].value"
-      },
-      {
-        "type": "JSON",
-        "header": "Attachments",
-        "path": "attachments[*].link"
-      }
-    ]
-  },
-  "transforms": [
-    {
-      "function": {
-        "inputHeaders": {
-          "headers": [
-            "Date Created",
-            "Last Verified Date",
-            "Last Update Time"
-          ]
+    ],
+    "mappings": [
+        {
+            "field": "guru_boardTitles",
+            "header": "Board Titles",
+            "subfieldPath": []
         },
-        "plugin": "guru_formatDates",
-        "function": "formatDates"
-      }
-    },
-    {
-      "function": {
-        "inputHeaders": {
-          "headers": [
-            "URL"
-          ]
+        {
+            "field": "externalArticleUpdateDate",
+            "header": "Last Update Time",
+            "subfieldPath": []
         },
-        "plugin": "guru_createUrls",
-        "function": "createUrl"
-      }
-    }
-  ],
-  "mappings": [
-    {
-      "field": "guru_boardTitles",
-      "header": "Board Titles",
-      "subfieldPath": []
-    },
-    {
-      "field": "externalArticleUpdateDate",
-      "header": "Last Update Time",
-      "subfieldPath": []
-    },
-    {
-      "field": "keywords",
-      "header": "Keywords",
-      "subfieldPath": []
-    },
-    {
-      "field": "guru_attachments",
-      "header": "Attachments",
-      "subfieldPath": []
-    },
-    {
-      "field": "landingPageUrl",
-      "header": "URL",
-      "subfieldPath": []
-    },
-    {
-      "field": "name",
-      "header": "Name",
-      "subfieldPath": []
-    },
-    {
-      "field": "guru_verificationState",
-      "header": "Verification State",
-      "subfieldPath": []
-    },
-    {
-      "field": "guru_collectionName",
-      "header": "Collection Name",
-      "subfieldPath": []
-    },
-    {
-      "field": "guru_ownerEmail",
-      "header": "Owner Email",
-      "subfieldPath": []
-    },
-    {
-      "field": "guru_lastVerifiedDate",
-      "header": "Last Verified Date",
-      "subfieldPath": []
-    },
-    {
-      "field": "entityId",
-      "header": "ID",
-      "subfieldPath": []
-    },
-    {
-      "field": "body",
-      "header": "Body",
-      "subfieldPath": []
-    },
-    {
-      "field": "externalArticlePostDate",
-      "header": "Date Created",
-      "subfieldPath": []
-    }
-  ],
+        {
+            "field": "keywords",
+            "header": "Keywords",
+            "subfieldPath": []
+        },
+        {
+            "field": "guru_attachments",
+            "header": "Attachments",
+            "subfieldPath": []
+        },
+        {
+            "field": "landingPageUrl",
+            "header": "URL",
+            "subfieldPath": []
+        },
+        {
+            "field": "name",
+            "header": "Name",
+            "subfieldPath": []
+        },
+        {
+            "field": "guru_verificationState",
+            "header": "Verification State",
+            "subfieldPath": []
+        },
+        {
+            "field": "guru_collectionName",
+            "header": "Collection Name",
+            "subfieldPath": []
+        },
+        {
+            "field": "guru_ownerEmail",
+            "header": "Owner Email",
+            "subfieldPath": []
+        },
+        {
+            "field": "guru_lastVerifiedDate",
+            "header": "Last Verified Date",
+            "subfieldPath": []
+        },
+        {
+            "field": "entityId",
+            "header": "ID",
+            "subfieldPath": []
+        },
+        {
+            "field": "bodyV2",
+            "header": "Body",
+            "subfieldPath": [
+                {
+                    "name": "markdown"
+                }
+            ]
+        },
+        {
+            "field": "externalArticlePostDate",
+            "header": "Date Created",
+            "subfieldPath": []
+        }
+    ],
     "scheduleConfig": {
-      "customSchedule": {
-        "timeZone": "America/New_York",
-        "startDate": "2021-09-14",
-        "startTime": "03:00",
-        "frequencyType": "DAILY"
-      },
-    "runMode": "COMPREHENSIVE"
-  }
+        "customSchedule": {
+            "timeZone": "America/New_York",
+            "startDate": "2021-09-14",
+            "startTime": "03:00",
+            "frequencyType": "DAILY"
+        },
+        "runMode": "COMPREHENSIVE"
+    },
+    "comprehensiveModeConfig": {
+        "comprehensiveSet": "ENTITIES_CREATED_BY_THIS_CONNECTOR",
+        "actionOnMissingEntities": "DELETE"
+    }
 }

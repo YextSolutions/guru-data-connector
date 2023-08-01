@@ -1,82 +1,82 @@
 {
-  "$id": "guru_guruCard",
-  "$schema": "https://schema.yext.com/config/km/field-presentation/v1",
-  "entityType": "guru_guruCard",
-  "displayName": "Guru Card",
-  "presentationEntries": [
-    {
-      "displayName": "Content",
-      "entryType": "DIVIDER"
-    },
-    {
-      "displayName": "Core Information",
-      "entryType": "SECTION",
-      "fields": [
+    "$id": "guru_guruCard",
+    "$schema": "https://schema.yext.com/config/km/field-presentation/v1",
+    "entityType": "guru_guruCard",
+    "displayName": "Guru Card",
+    "presentationEntries": [
         {
-          "id": "name",
-          "visibleOnAdd": true
+            "displayName": "Content",
+            "entryType": "DIVIDER"
         },
         {
-          "id": "entityId",
-          "visibleOnAdd": true
+            "displayName": "Core Information",
+            "entryType": "SECTION",
+            "fields": [
+                {
+                    "id": "name",
+                    "visibleOnAdd": true
+                },
+                {
+                    "id": "entityId",
+                    "visibleOnAdd": true
+                }
+            ]
+        },
+        {
+            "displayName": "Card Details",
+            "entryType": "SECTION",
+            "fields": [
+                {
+                    "id": "bodyV2",
+                    "visibleOnAdd": true
+                },
+                {
+                    "id": "landingPageUrl"
+                },
+                {
+                    "id": "guru_boardTitles"
+                },
+                {
+                    "id": "guru_collectionName"
+                },
+                {
+                    "id": "keywords"
+                },
+                {
+                    "id": "externalArticlePostDate"
+                },
+                {
+                    "id": "externalArticleUpdateDate"
+                },
+                {
+                    "id": "guru_lastVerifiedDate"
+                },
+                {
+                    "id": "guru_verificationState"
+                },
+                {
+                    "id": "guru_ownerEmail"
+                },
+                {
+                    "id": "guru_attachments"
+                }
+            ]
+        },
+        {
+            "displayName": "Other",
+            "entryType": "DIVIDER"
+        },
+        {
+            "displayName": "Internal Use Only",
+            "entryType": "SECTION",
+            "fields": [
+                {
+                    "id": "folder"
+                },
+                {
+                    "id": "labels"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "displayName": "Card Details",
-      "entryType": "SECTION",
-      "fields": [
-        {
-          "id": "body",
-          "visibleOnAdd": true
-        },
-        {
-          "id": "landingPageUrl"
-        },
-        {
-          "id": "guru_boardTitles"
-        },
-        {
-          "id": "guru_collectionName"
-        },
-        {
-          "id": "keywords"
-        },
-        {
-          "id": "externalArticlePostDate"
-        },
-        {
-          "id": "externalArticleUpdateDate"
-        },
-        {
-          "id": "guru_lastVerifiedDate"
-        },
-        {
-          "id": "guru_verificationState"
-        },
-        {
-          "id": "guru_ownerEmail"
-        },
-        {
-          "id": "guru_attachments"
-        }
-      ]
-    },
-    {
-      "displayName": "Other",
-      "entryType": "DIVIDER"
-    },
-    {
-      "displayName": "Internal Use Only",
-      "entryType": "SECTION",
-      "fields": [
-        {
-          "id": "folder"
-        },
-        {
-          "id": "labels"
-        }
-      ]
-    }
-  ]
+    ]
 }
